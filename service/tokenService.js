@@ -10,7 +10,6 @@ class TokenService  {
         return {
             accessToken, refreshToken
         }
-        
     }
 
     async removeToken (refreshToken) {
