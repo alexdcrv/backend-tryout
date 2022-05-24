@@ -4,9 +4,9 @@ const mongoose = require ("mongoose")
 const cookieParser = require ('cookie-parser')
 const cors = require ('cors')
 const authRoutes = require ('./routes/auth')
+const usersRoutes = require ('./routes/users')
 const mongoUri = config.get('mongoUri')
 const PORT = config.get('port')
-
 
 const app = express();
 
@@ -14,6 +14,7 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(cors())
 app.use('/auth', authRoutes)
+app.use('/users', usersRoutes)
 
 const start = async () =>{
     try {

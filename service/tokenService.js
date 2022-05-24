@@ -19,11 +19,13 @@ class TokenService  {
 
 
 
-    async validateToken (token, secret) {
+    validateToken (token, secret) {
         try {
+            // console.log(token, secret);
             const verify = jwt.verify(token, secret)
             return verify
         } catch (e) {
+            console.log(e);
             return null
         }
     }
