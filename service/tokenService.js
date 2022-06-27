@@ -34,7 +34,7 @@ class TokenService  {
         if(!refreshToken) {
             return false
         }
-        const validate = this.validateToken(refreshToken, jwt_secret_access)
+        const validate = this.validateToken(refreshToken, jwt_secret_refresh)
         const findToken = await tokenModel.findOne({refreshToken})
         if(!validate || !findToken) {
             return false
